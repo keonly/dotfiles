@@ -1,0 +1,68 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$all\
+$cmd_duration $jobs $time\
+$line_break\
+$character"""
+
+[fill]
+symbol = "─"
+
+[directory]
+style = "bold bg:blue"
+format = "[ $path ]($style)"
+truncation_length = 4
+truncation_symbol = ""
+truncate_to_repo = true
+
+[git_branch]
+symbol = ""
+style = "bold bg:bright-black"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "fg:black bg:cyan"
+format = "[ $all_status$ahead_behind ]($style)"
+
+[git_metrics]
+disabled = false
+
+[cmd_duration]
+style = "yellow"
+format = "[$duration]($style)"
+
+[lua]
+symbol = "\ue620"
+style = "fg:blue bg:bright-black"
+format = "[ $symbol $version ]($style)"
+
+[nodejs]
+symbol = ""
+style = "fg:purple bg:bright-black"
+format = "[ $symbol $version ]($style)"
+
+[rust]
+symbol = ""
+style = "fg:yellow bg:bright-black"
+format = "[ $symbol $version ]($style)"
+
+[python]
+symbol = "🐍"
+style = "fg:green bg:bright-black"
+format = "[ $symbol $version ]($style)"
+
+[conda]
+symbol = "\ue73c "
+style = "bold fg:bright-black bg:yellow"
+format = "[ $symbol$environment ]($style)"
+
+[time]
+disabled = false
+time_format = "%R"          # H:M Format
+style = "bold white"
+format = "[$time ]($style)"
