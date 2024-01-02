@@ -1,0 +1,59 @@
+{
+    "spacing": 4,
+    "height":32,
+    "modules-left": ["hyprland/workspaces", "custom/icon"],
+    "modules-right": [
+	    "wireplumber",
+	    "custom/separator",
+	    "cpu",
+	    "custom/separator",
+	    "memory",
+	    "custom/separator",
+	    "temperature",
+	    "custom/separator",
+	    "clock"
+    ],
+
+    "custom/icon": {
+        "exec": "~/.config/waybar/state",
+        "interval": "once",
+        "signal": 8
+    },
+    "custom/separator": {
+        "format": "|",
+	"tooltip": false
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format": " 󰥔 {:%b %d (%a) %H:%M} ",
+    },
+    "cpu": {
+        "format": "  CPU:{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "  MEM:{percentage}% "
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format-critical": "  !!{temperatureC}°C!! ",
+        "format": "  {temperatureC}°C "
+    },
+    "battery": {
+	"states": {
+	    "warning": 30,
+	    "critical": 15
+	},
+	"format-icons": ["", "", "", "", ""],
+        "format": " {icon} {capacity}% "
+    },
+    "wireplumber": {
+        "format": " {icon} {volume}% ",
+        "format-muted": "",
+        "on-click": "pavucontrol",
+        "format-icons": ["", "", ""]
+    }
+}
+
