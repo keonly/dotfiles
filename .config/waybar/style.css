@@ -1,4 +1,5 @@
 @define-color accent #89b4fa;
+/* @define-color accent #465577; */
 @define-color text #F4F4F4;
 @define-color invText #F4F4F4;
 /* text when background is accent */
@@ -52,7 +53,7 @@ window#waybar {
 
 #window {
   color: @invText;
-  background-color: @accent;
+  background-color: @bg;
   padding-left: 4px;
 }
 

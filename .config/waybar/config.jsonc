@@ -1,25 +1,49 @@
 {
+    "position": "bottom",
     "spacing": 4,
-    "height":32,
+    "height": 32,
     "modules-left": ["hyprland/workspaces", "custom/icon"],
+    "modules-center": ["custom/media"],
     "modules-right": [
 	    "wireplumber",
 	    "custom/separator",
-	    "battery",
+	    "cpu",
 	    "custom/separator",
-	    "network",
+	    "memory",
+	    "custom/separator",
+	    "temperature",
 	    "custom/separator",
 	    "clock"
     ],
 
+    "hyprland/workspaces": {
+        "active-only": true,
+        "persistent-workspaces": {
+            "*": 4, // 4 workspaces by default on every monitor
+        }
+    },
+
+    "custom/media": {
+        "format": "{}",
+        "escape": true,
+        "return-type": "json",
+        "max-length": 100,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "exec": "python $HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+    },
+
     "custom/icon": {
-        "exec": "~/.config/waybar/state",
+        "exec": "$HOME/.config/waybar/state",
         "interval": "once",
         "signal": 8
     },
     "custom/separator": {
         "format": "|",
-	"tooltip": false
+        "tooltip": false
     },
     "tray": {
         "spacing": 10
@@ -40,11 +64,11 @@
         "format": "  {temperatureC}°C "
     },
     "battery": {
-	"states": {
-	    "warning": 30,
-	    "critical": 15
-	},
-	"format-icons": [" ", " ", " ", " ", " "],
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format-icons": ["", "", "", "", ""],
         "format": " {icon} {capacity}% "
     },
     "wireplumber": {
@@ -52,18 +76,6 @@
         "format-muted": "",
         "on-click": "pavucontrol",
         "format-icons": ["", "", ""]
-    },
-    "network": {
-        "interface": "wlan0",
-        "format": "{ifname}",
-        "format-wifi": "  {essid} ({signalStrength}%) ",
-        "format-ethernet": " 󰊗 {ipaddr}/{cidr} ",
-        "format-disconnected": "", // An empty format will hide the module.
-        "tooltip-format": " 󰊗 {ifname} via {gwaddr} ",
-        "tooltip-format-wifi": "  {essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "  {ifname} ",
-        "tooltip-format-disconnected": " Disconnected ",
-        "max-length": 50
     }
 }
 
