@@ -32,3 +32,4 @@ local opts = {
 
 require("lazy").setup("plugins", opts)
 vim.cmd.colorscheme "catppuccin"
+vim.opt.showmode = false

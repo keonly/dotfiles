@@ -15,6 +15,7 @@ local config = function()
             "c",
 			"rust",
 			"markdown",
+            "markdown_inline",
 			"json",
 			"javascript",
 			"typescript",

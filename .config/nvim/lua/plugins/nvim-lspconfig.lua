@@ -106,14 +106,17 @@ local config = function()
 		on_attach = on_attach,
 	})
 
-    -- rust
-    lspconfig.rust_analyzer.setup({
-        settings = {
-            ["rust-analyzer"] = {
-                diagnostics = false;
-            },
-        },
-    })
+	-- rust
+	lspconfig.rust_analyzer.setup({
+		settings = {
+			["rust-analyzer"] = {},
+		},
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+
+	-- markdown
+	lspconfig.marksman.setup({})
 
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
