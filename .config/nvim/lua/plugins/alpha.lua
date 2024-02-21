@@ -105,8 +105,7 @@ return {
 			dashboard.button("SPC f t", "󰊄  Find text", "<cmd>Telescope live_grep<CR>"),
 			dashboard.button("SPC f r", "󰔠  Recent files", "<cmd>Telescope oldfiles<CR>"),
 			dashboard.button("SPC f p", "󱠏  Projects", "<cmd>Telescope projects<CR>"),
-			dashboard.button("SPC / u", "  Update plugins", "<cmd>Lazy update<CR>"),
-			dashboard.button("SPC / p", "  Lazy", "<cmd>Lazy<CR>"),
+			dashboard.button("SPC /", "  Lazy", "<cmd>Lazy<CR>"),
 			dashboard.button("SPC q", "  Quit", "<cmd>qa<CR>"),
 		}
 

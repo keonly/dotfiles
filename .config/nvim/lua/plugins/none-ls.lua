@@ -13,5 +13,6 @@ end
 
 return {
 	"nvimtools/none-ls.nvim",
+    lazy = false,
 	config = config,
 }
