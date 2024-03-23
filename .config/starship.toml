@@ -5,9 +5,10 @@ $os\
 $username\
 $hostname\
 $directory\
-[ ](bg:peach fg:text)\
+[ ](bg:yellow fg:text)\
 $git_branch\
 $git_status\
+[ ](bg:yellow fg:text)\
 [ ](bg:green fg:text)\
 $c\
 $rust\
@@ -119,12 +120,13 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:peach fg:mantle"
+style = "bg:yellow fg:mantle"
 format = '[$symbol $branch]($style)'
 
 [git_status]
-style = "bg:peach fg:mantle"
-format = '[\($all_status$ahead_behind\) ]($style)'
+style = "bg:yellow fg:mantle"
+# format = '[$all_status$ahead_behind ]($style)'
+format = '([\[$all_status$ahead_behind\]]($style))'
 
 # LANGUAGES START
 
