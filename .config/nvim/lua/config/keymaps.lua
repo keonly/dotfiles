@@ -28,3 +28,11 @@ keymap.set("n", "<leader>bt", "<cmd>ObsidianTemplate<CR>")
 
 -- Buffer options
 keymap.set("n", "<leader>tw", "<cmd>set invwrap<CR>")
+
+-- Molten
+keymap.set("n", "<leader>me", "<cmd>MoltenEvaluateOperator<CR>", { desc = "evaluate operator", silent = true })
+keymap.set("n", "<leader>mo", "<cmd>noautocmd MoltenEnterOutput<CR>", { desc = "open output window", silent = true })
+keymap.set("n", "<leader>mr", "<cmd>MoltenReevaluateCell<CR>", { desc = "re-eval cell", silent = true })
+keymap.set("v", "<leader>mv", "<cmd><C-u>MoltenEvaluateVisual<CR>gv", { desc = "execute visual selection", silent = true })
+keymap.set("n", "<leader>mh", "<cmd>MoltenHideOutput<CR>", { desc = "close output window", silent = true })
+keymap.set("n", "<leader>md", "<cmd>MoltenDelete<CR>", { desc = "delete Molten cell", silent = true })
