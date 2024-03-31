@@ -33,3 +33,7 @@ local opts = {
 require("lazy").setup("plugins", opts)
 vim.cmd.colorscheme "catppuccin"
 vim.opt.showmode = false
+
+-- For image.nvim
+package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
+package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"

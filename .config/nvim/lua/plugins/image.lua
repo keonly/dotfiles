@@ -4,7 +4,7 @@ local config = function()
         backend = "kitty",
         integrations = {
             markdown = {
-                enabled = false,
+                enabled = true,
             },
             neorg = {
                 enabled = false,
