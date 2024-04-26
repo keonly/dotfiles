@@ -35,4 +35,9 @@ return {
         "nvim-lua/plenary.nvim",
     },
     config = config,
+    keys = {
+        { "<leader>bf", "<cmd>ObsidianFollowLink<CR>", desc = "Obsidian: Follow link", },
+        { "<leader>bb", "<cmd>ObsidianBacklinks<CR>",  desc = "Obsidian: Show backlinks", },
+        { "<leader>bt", "<cmd>ObsidianTemplate<CR>",   desc = "Obsidian: Insert a template", },
+    },
 }
