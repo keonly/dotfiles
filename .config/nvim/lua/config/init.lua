@@ -17,7 +17,7 @@ require("config.keymaps")
 
 local opts = {
     defaults = {
-	    lazy = true,
+        lazy = true,
     },
     rtp = {
         disabled_plugins = {
@@ -26,12 +26,13 @@ local opts = {
         },
     },
     change_detection = {
-	    notify = true,
+        notify = true,
     },
 }
 
 require("lazy").setup("plugins", opts)
 vim.cmd.colorscheme "catppuccin"
+vim.cmd.set "termguicolors"
 vim.opt.showmode = false
 
 -- For image.nvim
