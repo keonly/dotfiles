@@ -34,6 +34,7 @@ require("lazy").setup("plugins", opts)
 vim.cmd.colorscheme "catppuccin"
 vim.cmd.set "termguicolors"
 vim.opt.showmode = false
+vim.opt.conceallevel = 1
 
 -- For image.nvim
 package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
