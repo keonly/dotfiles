@@ -15,7 +15,7 @@ local on_attach = function(client, bufnr)
 end
 
 local config = function()
-    require("neodev").setup({})
+    require("lazydev").setup({})
     require("neoconf").setup({})
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local lspconfig = require("lspconfig")
