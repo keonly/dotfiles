@@ -6,10 +6,10 @@ $username\
 $hostname\
 [ ](bg:surface0 fg:text)\
 $directory\
-[ ](bg:yellow fg:text)\
+[ ](bg:peach fg:text)\
 $git_branch\
 $git_status\
-[ ](bg:green fg:text)\
+[ ](bg:yellow fg:text)\
 $c\
 $rust\
 $ocaml\
@@ -21,8 +21,9 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[ ](bg:blue fg:text)\
+[ ](bg:green fg:text)\
 $docker_context\
+$kubernetes\
 $time\
 $line_break$character"""
 
@@ -120,11 +121,11 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:yellow fg:mantle"
+style = "bg:peach fg:mantle"
 format = '[$symbol $branch]($style)'
 
 [git_status]
-style = "bg:yellow fg:mantle"
+style = "bg:peach fg:mantle"
 # format = '[$all_status$ahead_behind ]($style)'
 format = '[\[$all_status$ahead_behind\] ]($style)'
 
@@ -132,65 +133,70 @@ format = '[\[$all_status$ahead_behind\] ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:green fg:base"
+style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
 
 [c]
 symbol = " "
-style = "bg:green fg:base"
+style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
 
 [rust]
 symbol = ""
-style = "bg:green fg:base"
+style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
 
 [ocaml]
 symbol = ""
-style = "bg:green fg:base"
+style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
 
 [lua]
 symbol = ""
-style = "bg:green fg:base"
+style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
 
 [golang]
 symbol = ""
-style = "bg:green fg:base"
+style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
 
 [php]
 symbol = ""
-style = "bg:green fg:base"
+style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
 
 [java]
 symbol = " "
-style = "bg:green fg:base"
+style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:green fg:base"
+style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:green fg:base"
+style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
 
 [python]
 symbol = ""
-style = "bg:green fg:base"
+style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
 
 # LANGUAGES END
 
 [docker_context]
 symbol = ""
-style = "bg:mantle"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+style = "bg:green fg:base"
+format = '[[$symbol( $context) ]($style)]($style)'
+
+[kubernetes]
+disabled = false
+style = "bg:blue fg:base"
+format = '[ $symbol$context( \($namespace\)) ]($style)'
 
 [time]
 disabled = false
