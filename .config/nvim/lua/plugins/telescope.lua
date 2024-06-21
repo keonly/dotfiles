@@ -36,6 +36,12 @@ return {
         { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Fuzzy find files", },
         { "<leader>fg", "<cmd>Telescope live_grep<CR>",  desc = "Fuzzy find in directory", },
         { "<leader>fb", "<cmd>Telescope buffers<CR>",    desc = "Fuzzy find buffers", },
-
+        {
+            "<leader>fl",
+            function()
+                require("telescope").extensions.lazygit.lazygit()
+            end,
+            desc = "Fuzzy find buffers",
+        },
     },
 }
