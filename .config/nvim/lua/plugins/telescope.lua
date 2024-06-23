@@ -41,7 +41,7 @@ return {
             function()
                 require("telescope").extensions.lazygit.lazygit()
             end,
-            desc = "Fuzzy find buffers",
+            desc = "Fuzzy find LazyGit instances",
         },
     },
 }
