@@ -49,7 +49,7 @@ local config = function()
 			notify = true,
 			treesitter = true,
 			telescope = {
-				enabled = false,
+				enabled = true,
 			},
 		},
 	})
