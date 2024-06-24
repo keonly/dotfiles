@@ -16,6 +16,13 @@ local config = function()
 				crust = "#000000",
 			},
 		},
+        highlight_overrides = {
+            mocha = function(mocha)
+                return {
+                    TelescopeBorder = { fg = mocha.text },
+                }
+            end,
+        },
 		integrations = {
 			dashboard = true,
 			gitsigns = true,
