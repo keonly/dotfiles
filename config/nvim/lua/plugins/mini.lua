@@ -1,5 +1,6 @@
 local config = function()
 	require("mini.ai").setup()
+    require("mini.bracketed").setup()
 	require("mini.bufremove").setup()
 	require("mini.comment").setup()
 	require("mini.cursorword").setup()
