@@ -1,7 +1,7 @@
 local opts = {
     timeout = 3000,
     render = "compact",
-    stages = "fade",
+    stages = "static",
     top_down = false,
 }
 
