@@ -22,6 +22,7 @@ $kotlin\
 $haskell\
 $python\
 [ ](bg:green fg:text)\
+[ ](bg:blue fg:text)\
 $docker_context\
 $kubernetes\
 $time\
@@ -197,7 +198,7 @@ format = '[[$symbol $context ]($style)]($style)'
 disabled = false
 style = "bg:blue fg:base"
 symbol = "󱃾"
-format = '[ $symbol $context( \($namespace\)) ]($style)'
+format = '[$symbol $context( \($namespace\)) ]($style)'
 
 [time]
 disabled = false
