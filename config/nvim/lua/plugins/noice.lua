@@ -2,16 +2,16 @@ return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
 	opts = {
-        cmdline = {
-            view = "cmdline_popup",
-            format = {
-                cmdline = {title = ""},
-                filter = {title = ""},
-                lua = {title = ""},
-                help = {title = ""},
-                input = {title = ""},
-            }
-        },
+		cmdline = {
+			view = "cmdline_popup",
+			format = {
+				cmdline = { title = "" },
+				filter = { title = "" },
+				lua = { title = "" },
+				help = { title = "" },
+				input = { title = "" },
+			},
+		},
 		routes = {
 			{
 				view = "notify",
