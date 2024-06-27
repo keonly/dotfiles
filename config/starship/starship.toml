@@ -22,8 +22,8 @@ $kotlin\
 $haskell\
 $python\
 [ ](bg:green fg:text)\
-[ ](bg:blue fg:text)\
 $docker_context\
+[ ](bg:blue fg:text)\
 $kubernetes\
 $time\
 $line_break$character"""
