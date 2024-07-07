@@ -10,8 +10,8 @@ return {
 		require("obsidian").setup({
 			workspaces = {
 				{
-					name = "personal",
-					path = "~/garden",
+					name = "Vault",
+					path = "~/Vault",
 				},
 			},
 			disable_frontmatter = true,
