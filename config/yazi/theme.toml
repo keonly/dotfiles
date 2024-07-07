@@ -32,8 +32,8 @@ border_style  = { fg = "#8d8d8d" }
 syntect_theme = "~/.config/yazi/Catppuccin-mocha.tmTheme"
 
 [status]
-separator_open  = ""
-separator_close = ""
+separator_open  = ""
+separator_close = ""
 separator_style = { fg = "#393939", bg = "#393939" }
 
 # Mode
