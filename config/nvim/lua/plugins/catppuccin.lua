@@ -28,7 +28,6 @@ return {
 				end,
 			},
 			integrations = {
-				dashboard = true,
 				gitsigns = true,
 				indent_blankline = {
 					enabled = true,
