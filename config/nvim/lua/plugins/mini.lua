@@ -50,7 +50,6 @@ return {
         require("mini.cursorword").setup()
         require("mini.jump").setup()
         require("mini.operators").setup()
-        require("mini.pairs").setup()
         require("mini.starter").setup({
             items = items(),
             header = ascii_art .. greetings(),
