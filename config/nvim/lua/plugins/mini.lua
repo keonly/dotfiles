@@ -1,3 +1,18 @@
+local ascii_art = [[
+      ___           ___                       ___
+     /\__\         /\__\          ___        /\__\
+    /::|  |       /:/  /         /\  \      /::|  |
+   /:|:|  |      /:/  /          \:\  \    /:|:|  |
+  /:/|:|  |__   /:/__/  ___      /::\__\  /:/|:|__|__
+ /:/ |:| /\__\  |:|  | /\__\  __/:/\/__/ /:/ |::::\__\
+ \/__|:|/:/  /  |:|  |/:/  / /\/:/  /    \/__/~~/:/  /
+     |:/:/  /   |:|__/:/  /  \::/__/           /:/  /
+     |::/  /     \::::/__/    \:\__\          /:/  /
+     /:/  /       ~~~~         \/__/         /:/  /
+     \/__/                                   \/__/
+
+]]
+
 local greetings = function()
     local hour = tonumber(vim.fn.strftime("%H"))
     -- [04:00, 12:00) - morning, [12:00, 20:00) - day, [20:00, 04:00) - evening
@@ -6,6 +21,22 @@ local greetings = function()
     local username = vim.loop.os_get_passwd()["username"] or "USERNAME"
 
     return ("Good %s, %s"):format(day_part, username)
+end
+
+local items = function()
+    return {
+        { name = "Edit new buffer", action = "enew",                  section = "Builtin actions" },
+        { name = "Lazy open",       action = ":Lazy",                 section = "Builtin actions" },
+        { name = "Quit Neovim",     action = "qall",                  section = "Builtin actions" },
+    }
+end
+
+local curr_time = function()
+    local version = vim.version()
+    local print_version = "NVIM v" .. version.major .. "." .. version.minor .. "." .. version.patch
+    local datetime = os.date("%Y/%m/%d %H:%M:%S")
+
+    return print_version .. " - " .. datetime
 end
 
 return {
@@ -21,25 +52,9 @@ return {
         require("mini.operators").setup()
         require("mini.pairs").setup()
         require("mini.starter").setup({
-            items = {
-                require("mini.starter").sections.builtin_actions(),
-                require("mini.starter").sections.recent_files(5, true),
-            },
-            header = [[
-      ___           ___                       ___
-     /\__\         /\__\          ___        /\__\
-    /::|  |       /:/  /         /\  \      /::|  |
-   /:|:|  |      /:/  /          \:\  \    /:|:|  |
-  /:/|:|  |__   /:/__/  ___      /::\__\  /:/|:|__|__
- /:/ |:| /\__\  |:|  | /\__\  __/:/\/__/ /:/ |::::\__\
- \/__|:|/:/  /  |:|  |/:/  / /\/:/  /    \/__/~~/:/  /
-     |:/:/  /   |:|__/:/  /  \::/__/           /:/  /
-     |::/  /     \::::/__/    \:\__\          /:/  /
-     /:/  /       ~~~~         \/__/         /:/  /
-     \/__/                                   \/__/
-
-]] .. greetings(),
-            footer = "",
+            items = items(),
+            header = ascii_art .. greetings(),
+            footer = curr_time(),
         })
         require("mini.surround").setup()
     end,
