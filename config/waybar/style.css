@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-  background-color: @accent;
+  background-color: @bg;
   color: @text;
   opacity: 1;
 }
@@ -36,8 +36,8 @@ window#waybar.empty #window {
 }
 
 #window {
-  background-color: @accent;
-  color: @invText;
+  background-color: @bg;
+  color: @text;
 
   padding: 0px 10px 0px 10px;
 }
