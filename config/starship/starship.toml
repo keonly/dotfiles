@@ -21,6 +21,7 @@ $java\
 $kotlin\
 $haskell\
 $python\
+$conda\
 [ ](bg:green fg:text)\
 $docker_context\
 [ ](bg:blue fg:text)\
@@ -186,6 +187,10 @@ format = '[$symbol( $version) ]($style)'
 symbol = ""
 style = "bg:yellow fg:base"
 format = '[$symbol( $version) ]($style)'
+
+[conda]
+style = "bg:yellow fg:base"
+format = '[\($environment\) ]($style)'
 
 # LANGUAGES END
 
