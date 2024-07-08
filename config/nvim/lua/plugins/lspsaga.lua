@@ -16,6 +16,9 @@ return {
             definition_action_keys = {
                 edit = "<CR>",
             },
+            ui = {
+                code_action = " ",
+            },
         })
     end,
     dependencies = {
