@@ -1,8 +1,6 @@
 @define-color accent #89b4fa;
-/* @define-color accent #465577; */
 @define-color text #F4F4F4;
-@define-color invText #F4F4F4;
-/* text when background is accent */
+@define-color invText #161616; /* text when background is accent */
 @define-color bg #161616;
 
 * {
@@ -13,13 +11,13 @@
 }
 
 window#waybar {
-  background-color: @bg;
+  background-color: @accent;
   color: @text;
   opacity: 1;
 }
 
 #workspaces {
-  background-color: transparent;
+  background-color: @bg;
 }
 
 #workspaces button {
@@ -32,6 +30,18 @@ window#waybar {
   color: @invText;
 }
 
+window#waybar.empty #window {
+  background-color: transparent;
+  color: transparent;
+}
+
+#window {
+  background-color: @accent;
+  color: @invText;
+
+  padding: 0px 10px 0px 10px;
+}
+
 #pulseaudio,
 #cpu,
 #memory,
@@ -40,23 +50,30 @@ window#waybar {
 #clock,
 #tray,
 #custom-icon {
-  background-color: transparent;
+  background-color: @bg;
   color: @text;
   margin: 0px;
 }
 
+#privacy {
+  padding: 0px;
+}
+#privacy-item.screenshare {
+  margin-right: 0px;
+  margin-left: 5px;
+  padding-left: 7px;
+}
+
+#privacy-item.audio-in {
+  margin-left: 0px;
+  padding-left: 3px;
+  padding-right: 5px;
+}
 
 .modules-left {
   background-color: @bg;
   padding: 0px 0px 0px 0px;
 }
-
-#window {
-  color: @invText;
-  background-color: @bg;
-  padding-left: 4px;
-}
-
 .modules-right {
   background-color: @bg;
   padding: 0px 0px 0px 0px;

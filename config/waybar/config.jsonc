@@ -1,81 +1,111 @@
 {
-    "position": "bottom",
-    "spacing": 4,
-    "height": 32,
-    "modules-left": ["hyprland/workspaces", "custom/icon"],
-    "modules-center": ["custom/media"],
-    "modules-right": [
-	    "wireplumber",
-	    "custom/separator",
-	    "cpu",
-	    "custom/separator",
-	    "memory",
-	    "custom/separator",
-	    "temperature",
-	    "custom/separator",
-	    "clock"
+  "position": "top",
+  "spacing": 4,
+  "height": 32,
+  "modules-left": ["hyprland/workspaces", "custom/scratch", "hyprland/window"],
+  "modules-center": [],
+  "modules-right": [
+    "wireplumber",
+    "custom/separator",
+    "cpu",
+    "custom/separator",
+    "memory",
+    "custom/separator",
+    "temperature",
+    "custom/separator",
+    "clock",
+  ],
+
+  "hyprland/workspaces": {
+    "active-only": true,
+    "persistent-workspaces": {
+      "*": 6, // 6 workspaces by default on every monitor
+    },
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 100,
+  },
+
+  "custom/scratch": {
+    "interval": 3,
+    "exec": "hyprctl -j workspaces | jq 'map(select(.name == \"special:special\")) | length'",
+    "format": "^{}",
+    "on-click": "hyprctl dispatch togglespecialworkspace",
+    "on-click-right": "hyprctl dispatch movetoworkspace special",
+  },
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false,
+  },
+
+  "custom/media": {
+    "format": "{}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 100,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "exec": "python $HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+  },
+
+  "tray": {
+    "spacing": 10,
+  },
+  "clock": {
+    "format": " 󰥔 {:%b %d (%a) %H:%M} ",
+  },
+  "cpu": {
+    "format": "  CPU:{usage}% ",
+    "tooltip": false,
+  },
+  "memory": {
+    "format": "  MEM:{percentage}% ",
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format-critical": "  !!{temperatureC}°C!! ",
+    "format": "  {temperatureC}°C ",
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format-icons": ["", "", "", "", ""],
+    "format": " {icon} {capacity}% ",
+  },
+  "wireplumber": {
+    "format": " {icon} {volume}% ",
+    "format-muted": "  ",
+    "on-click": "pavucontrol",
+    "format-icons": ["", "", ""],
+  },
+  "privacy": {
+    "format": "{} | ",
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
     ],
-
-    "hyprland/workspaces": {
-        "active-only": true,
-        "persistent-workspaces": {
-            "*": 4, // 4 workspaces by default on every monitor
-        }
-    },
-
-    "custom/media": {
-        "format": "{}",
-        "escape": true,
-        "return-type": "json",
-        "max-length": 100,
-        "on-click": "playerctl play-pause",
-        "on-click-right": "playerctl stop",
-        "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous",
-        "exec": "python $HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
-    },
-
-    "custom/icon": {
-        "exec": "$HOME/.config/waybar/state",
-        "interval": "once",
-        "signal": 8
-    },
-    "custom/separator": {
-        "format": "|",
-        "tooltip": false
-    },
-    "tray": {
-        "spacing": 10
-    },
-    "clock": {
-        "format": " 󰥔 {:%b %d (%a) %H:%M} ",
-    },
-    "cpu": {
-        "format": "  CPU:{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "  MEM:{percentage}% "
-    },
-    "temperature": {
-        "critical-threshold": 80,
-        "format-critical": "  !!{temperatureC}°C!! ",
-        "format": "  {temperatureC}°C "
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format-icons": ["", "", "", "", ""],
-        "format": " {icon} {capacity}% "
-    },
-    "wireplumber": {
-        "format": " {icon} {volume}% ",
-        "format-muted": "",
-        "on-click": "pavucontrol",
-        "format-icons": ["", "", ""]
-    }
+  },
 }
-
