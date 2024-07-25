@@ -7,6 +7,7 @@ opt.softtabstop = 4
 opt.expandtab = true
 opt.smartindent = true
 opt.wrap = false
+opt.textwidth = 80
 
 -- Search
 opt.incsearch = true
@@ -15,14 +16,22 @@ opt.smartcase = true
 opt.hlsearch = false
 
 -- Appearance
+opt.numberwidth = 4
 opt.number = true
 opt.relativenumber = true
 opt.termguicolors = true
-opt.colorcolumn = "100"
+opt.colorcolumn = "80"
 opt.signcolumn = "yes"
 opt.cmdheight = 1
 opt.scrolloff = 10
 opt.completeopt = "menuone,noinsert,noselect"
+
+-- Fold
+opt.foldcolumn = "1"
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
+opt.fillchars = [[eob: ,fold: ,foldopen:⌄,foldsep: ,foldclose:]]
 
 -- Behaviour
 opt.hidden = true
