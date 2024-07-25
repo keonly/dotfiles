@@ -23,6 +23,7 @@ return {
 			highlight_overrides = {
 				mocha = function(mocha)
 					return {
+                        LineNr = { fg = mocha.overlay1 },
 						TelescopeBorder = { fg = mocha.text },
 					}
 				end,
