@@ -25,9 +25,9 @@ end
 
 local items = function()
     return {
-        { name = "Edit new buffer", action = "enew",                  section = "Builtin actions" },
-        { name = "Lazy open",       action = ":Lazy",                 section = "Builtin actions" },
-        { name = "Quit Neovim",     action = "qall",                  section = "Builtin actions" },
+        { name = "Edit new buffer", action = "enew",  section = "Builtin actions" },
+        { name = "Lazy open",       action = ":Lazy", section = "Builtin actions" },
+        { name = "Quit Neovim",     action = "qall",  section = "Builtin actions" },
     }
 end
 
@@ -43,7 +43,15 @@ return {
     "echasnovski/mini.nvim",
     version = false,
     config = function()
-        require("mini.ai").setup()
+        require("mini.ai").setup({
+            custom_textobjects = {
+                c = require("mini.ai").gen_spec.treesitter({ a = "@class.outer", i = "@class.outer" }), -- Only outer is available
+                f = require("mini.ai").gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }),
+                r = require("mini.ai").gen_spec.treesitter({ a = "@parameter.outer", i = "@parameter.inner" }),
+                m = require("mini.ai").gen_spec.treesitter({ a = "@comment.outer", i = "@comment.outer" }), -- Only outer is available
+            },
+            n_lines = 150,
+        })
         require("mini.bracketed").setup()
         require("mini.bufremove").setup()
         require("mini.comment").setup()
