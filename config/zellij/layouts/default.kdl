@@ -1,0 +1,62 @@
+layout {
+    default_tab_template {
+        pane size=2 borderless=true {
+            plugin location="file:$HOME/.config/zellij/plugins/zjstatus/zjstatus.wasm" {
+                format_left   "{mode}#[bg=#161616] {tabs}"
+                format_center ""
+                format_right  "#[bg=#161616,fg=#b4befe]█#[bg=#b4befe,fg=#161616,bold]#[bg=#161616,fg=#b4befe]█#[bg=#161616,fg=#b4befe,bold] {session} #[bg=#161616,fg=#161616,bold]"
+                format_space  ""
+                format_hide_on_overlength "true"
+                format_precedence "crl"
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=#6f6f6f]{char}"
+                border_position "top"
+
+                mode_normal        "#[bg=#89b4fa,fg=#161616,bold] NORMAL#[bg=#161616,fg=#89b4fa]█"
+                mode_locked        "#[bg=#6e738d,fg=#161616,bold] LOCKED#[bg=#161616,fg=#6e738d]█"
+                mode_resize        "#[bg=#f38ba8,fg=#161616,bold] RESIZE#[bg=#161616,fg=#f38ba8]█"
+                mode_pane          "#[bg=#a6da95,fg=#161616,bold] PANE#[bg=#161616,fg=#a6da95]█"
+                mode_tab           "#[bg=#b4befe,fg=#161616,bold] TAB#[bg=#161616,fg=#b4befe]█"
+                mode_scroll        "#[bg=#f9e2af,fg=#161616,bold] SCROLL#[bg=#161616,fg=#f9e2af]█"
+                mode_enter_search  "#[bg=#8aadf4,fg=#161616,bold] ENT-SEARCH#[bg=#161616,fg=#8aadf4]█"
+                mode_search        "#[bg=#8aadf4,fg=#161616,bold] SEARCHARCH#[bg=#161616,fg=#8aadf4]█"
+                mode_rename_tab    "#[bg=#b4befe,fg=#161616,bold] RENAME-TAB#[bg=#161616,fg=#b4befe]█"
+                mode_rename_pane   "#[bg=#89b4fa,fg=#161616,bold] RENAME-PANE#[bg=#161616,fg=#89b4fa]█"
+                mode_session       "#[bg=#74c7ec,fg=#161616,bold] SESSION#[bg=#161616,fg=#74c7ec]█"
+                mode_move          "#[bg=#f5c2e7,fg=#161616,bold] MOVE#[bg=#161616,fg=#f5c2e7]█"
+                mode_prompt        "#[bg=#8aadf4,fg=#161616,bold] PROMPT#[bg=#161616,fg=#8aadf4]█"
+                mode_tmux          "#[bg=#f5a97f,fg=#161616,bold] TMUX#[bg=#161616,fg=#f5a97f]█"
+
+                // formatting for inactive tabs
+                tab_normal              "#[bg=#161616,fg=#89b4fa]█#[bg=#89b4fa,fg=#161616,bold]{index} #[bg=#161616,fg=#89b4fa,bold] {name}{floating_indicator}#[bg=#161616,fg=#161616,bold]█"
+                tab_normal_fullscreen   "#[bg=#161616,fg=#89b4fa]█#[bg=#89b4fa,fg=#161616,bold]{index} #[bg=#161616,fg=#89b4fa,bold] {name}{fullscreen_indicator}#[bg=#161616,fg=#161616,bold]█"
+                tab_normal_sync         "#[bg=#161616,fg=#89b4fa]█#[bg=#89b4fa,fg=#161616,bold]{index} #[bg=#161616,fg=#89b4fa,bold] {name}{sync_indicator}#[bg=#161616,fg=#161616,bold]█"
+
+                // formatting for the current active tab
+                tab_active              "#[bg=#161616,fg=#fab387]█#[bg=#fab387,fg=#161616,bold]{index} #[bg=#161616,fg=#fab387,bold] {name}{floating_indicator}#[bg=#161616,fg=#161616,bold]█"
+                tab_active_fullscreen   "#[bg=#161616,fg=#fab387]█#[bg=#fab387,fg=#161616,bold]{index} #[bg=#161616,fg=#fab387,bold] {name}{fullscreen_indicator}#[bg=#161616,fg=#161616,bold]█"
+                tab_active_sync         "#[bg=#161616,fg=#fab387]█#[bg=#fab387,fg=#161616,bold]{index} #[bg=#161616,fg=#fab387,bold] {name}{sync_indicator}#[bg=#161616,fg=#161616,bold]█"
+
+                // separator between the tabs
+                tab_separator           "#[bg=#161616] "
+
+                // indicators
+                tab_sync_indicator       " "
+                tab_fullscreen_indicator " 󰊓"
+                tab_floating_indicator   " 󰹙"
+
+                command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
+                command_git_branch_format      "#[fg=blue] {stdout} "
+                command_git_branch_interval    "10"
+                command_git_branch_rendermode  "static"
+
+                datetime        "#[fg=#6f6f6f,bold] {format} "
+                datetime_format "%A, %d %b %Y %H:%M"
+                datetime_timezone "Asia/Seoul"
+            }
+        }
+    children
+    }
+}
