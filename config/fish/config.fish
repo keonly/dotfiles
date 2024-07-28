@@ -18,7 +18,3 @@ abbr -a --position anywhere -- k kubectl
 abbr -a --position anywhere -- kgp 'kubectl get pods'
 abbr -a --position command -- lg lazygit
 abbr -a --position command -- nv nvim
-
-alias pfetch="~/.config/pfetch"
-
-pfetch
