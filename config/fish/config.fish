@@ -7,7 +7,7 @@ zoxide init fish | source
 fzf --fish | source
 thefuck --alias | source
 
-set PATH $PATH /Users/keon/.local/bin
+set PATH $PATH $HOME/.local/bin
 
 set -gx SHELL /usr/bin/fish
 
