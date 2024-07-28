@@ -2,4 +2,7 @@
 lazy-lock.json
 
 # fish
+completions/
+conf.d/
+functions/
 fish_variables
