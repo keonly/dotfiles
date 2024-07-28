@@ -1,7 +1,7 @@
 {
   "position": "top",
   "spacing": 4,
-  "height": 32,
+  "height": 36,
   "modules-left": ["hyprland/workspaces", "custom/scratch", "hyprland/window"],
   "modules-center": [],
   "modules-right": [
