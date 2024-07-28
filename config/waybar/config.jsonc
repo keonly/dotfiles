@@ -15,19 +15,16 @@
     "custom/separator",
     "clock",
   ],
-
   "hyprland/workspaces": {
     "active-only": true,
     "persistent-workspaces": {
       "*": 6, // 6 workspaces by default on every monitor
     },
   },
-
   "hyprland/window": {
     "format": "{}",
     "max-length": 100,
   },
-
   "custom/scratch": {
     "interval": 3,
     "exec": "hyprctl -j workspaces | jq 'map(select(.name == \"special:special\")) | length'",
@@ -39,7 +36,6 @@
     "format": "|",
     "tooltip": false,
   },
-
   "custom/media": {
     "format": "{}",
     "escape": true,
@@ -52,7 +48,6 @@
     "on-scroll-down": "playerctl previous",
     "exec": "python $HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
   },
-
   "tray": {
     "spacing": 10,
   },
@@ -78,6 +73,18 @@
     },
     "format-icons": ["", "", "", "", ""],
     "format": " {icon} {capacity}% ",
+  },
+  "network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "  {essid} ",
+    "format-ethernet": " 󰊗 {ipaddr}/{cidr} ",
+    "format-disconnected": "", // An empty format will hide the module.
+    "tooltip-format": " 󰊗 {ifname} via {gwaddr} ",
+    "tooltip-format-wifi": "  {essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "  {ifname} ",
+    "tooltip-format-disconnected": " Disconnected ",
+    "max-length": 20,
   },
   "wireplumber": {
     "format": " {icon} {volume}% ",
