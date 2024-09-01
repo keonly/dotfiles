@@ -89,7 +89,7 @@
   "wireplumber": {
     "format": " {icon} {volume}% ",
     "format-muted": "  ",
-    "on-click": "pavucontrol",
+    "on-click": "pavucontrol-qt",
     "format-icons": ["", "", ""],
   },
   "privacy": {
