@@ -1,17 +1,17 @@
 return {
 	"luukvbaal/statuscol.nvim",
-    event = "VeryLazy",
+	event = "VeryLazy",
 	config = function()
 		local builtin = require("statuscol.builtin")
 		require("statuscol").setup({
-            ft_ignore = { "neo-tree", "lazy" },
+			ft_ignore = { "neo-tree", "lazy" },
 			segments = {
 				{
 					text = { builtin.foldfunc, " " },
 					click = "v:lua.ScFa",
 					hl = "Comment",
 				},
-				{ text = { "%s" }, click = "v:lua.ScSa" },
+				{ text = { " " }, click = "v:lua.ScSa" },
 				{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
 				{
 					sign = {
