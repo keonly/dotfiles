@@ -7,7 +7,7 @@ opt.softtabstop = 4
 opt.expandtab = true
 opt.smartindent = true
 opt.wrap = false
-opt.textwidth = 80
+opt.textwidth = 0
 
 -- Search
 opt.incsearch = true
