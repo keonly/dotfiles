@@ -7,7 +7,8 @@ opt.softtabstop = 4
 opt.expandtab = true
 opt.smartindent = true
 opt.wrap = false
-opt.textwidth = 80
+opt.textwidth = 0
+opt.linebreak = true
 
 -- Search
 opt.incsearch = true
@@ -25,6 +26,8 @@ opt.signcolumn = "yes"
 opt.cmdheight = 1
 opt.scrolloff = 10
 opt.completeopt = "menuone,noinsert,noselect"
+opt.showmode = false
+opt.conceallevel = 1
 
 -- Fold
 opt.foldcolumn = "1"

@@ -23,11 +23,11 @@ return {
 			highlight_overrides = {
 				mocha = function(mocha)
 					return {
-                        CursorLineNr = { fg = mocha.text },
-                        LineNr = { fg = mocha.overlay1 },
+						CursorLineNr = { fg = mocha.text },
+						LineNr = { fg = mocha.overlay1 },
 						TelescopeBorder = { fg = mocha.text },
-                        NoiceCmdlineIcon = { fg = mocha.text },
-                        NoiceCmdlinePopupBorder = { fg = mocha.text },
+						NoiceCmdlineIcon = { fg = mocha.text },
+						NoiceCmdlinePopupBorder = { fg = mocha.text },
 					}
 				end,
 			},
@@ -67,5 +67,7 @@ return {
 				},
 			},
 		})
+		vim.cmd.colorscheme("catppuccin")
 	end,
+    lazy = false,
 }
