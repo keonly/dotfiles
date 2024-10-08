@@ -25,6 +25,8 @@ opt.signcolumn = "yes"
 opt.cmdheight = 1
 opt.scrolloff = 10
 opt.completeopt = "menuone,noinsert,noselect"
+opt.showmode = false
+opt.conceallevel = 1
 
 -- Fold
 opt.foldcolumn = "1"

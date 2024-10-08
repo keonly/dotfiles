@@ -19,8 +19,3 @@ local opts = {
 		notify = true,
 	},
 }
-
-vim.cmd.colorscheme("catppuccin")
-vim.cmd.set("termguicolors")
-vim.opt.showmode = false
-vim.opt.conceallevel = 1
