@@ -66,4 +66,7 @@ return {
         require("mini.surround").setup()
     end,
     lazy = false,
+    dependencies = {
+        "luukvbaal/statuscol.nvim",
+    },
 }
