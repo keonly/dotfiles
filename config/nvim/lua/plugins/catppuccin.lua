@@ -61,6 +61,7 @@ return {
                     },
                 },
                 notify = true,
+                octo = true,
                 treesitter = true,
                 telescope = {
                     enabled = true,

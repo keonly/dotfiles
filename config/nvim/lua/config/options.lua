@@ -28,13 +28,14 @@ opt.scrolloff = 10
 opt.completeopt = "menuone,noinsert,noselect"
 opt.showmode = false
 opt.conceallevel = 1
+opt.cursorline = true
 
 -- Fold
 opt.foldcolumn = "1"
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
-opt.fillchars = [[eob: ,fold: ,foldopen:⌄,foldsep: ,foldclose:]]
+opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 -- Behaviour
 opt.hidden = true
@@ -51,3 +52,4 @@ opt.iskeyword:append("-")
 opt.clipboard:append("unnamedplus")
 opt.modifiable = true
 opt.encoding = "UTF-8"
+opt.timeoutlen = 1000
