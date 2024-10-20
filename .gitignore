@@ -9,3 +9,6 @@ completions/
 conf.d/
 functions/
 fish_variables
+
+# tmux
+plugins/
