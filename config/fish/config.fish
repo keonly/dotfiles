@@ -21,3 +21,5 @@ abbr -a --position anywhere -- kgp 'kubectl get pods'
 abbr -a --position command -- lg lazygit
 abbr -a --position command -- nv nvim
 abbr -a --position command -- yz yazi
+
+fish_vi_key_bindings
