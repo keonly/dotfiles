@@ -11,4 +11,4 @@ functions/
 fish_variables
 
 # tmux
-plugins/
+config/tmux/plugins/
